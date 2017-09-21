@@ -23,7 +23,7 @@ public class SortServiceImpl implements SortService {
      */
     public int[] doSort(int[] numbers) {
 
-        /** 例：入れ替えていく **/
+        /** 例：最小値を抜き出していく。抜き出した値は検査値から除外していく **/
 
         // 結果を返す用の入れ物作る
         int[] result = new int[numbers.length];
