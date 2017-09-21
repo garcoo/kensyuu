@@ -15,7 +15,7 @@ import com.sample.kensyuu.service.*;
  * 
  * sort service impl test
  * 
- * @author t-coga
+ * @author your name
  */
 public class SortServiceImpleTest {
 
