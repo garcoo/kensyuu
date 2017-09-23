@@ -7,9 +7,9 @@ import com.sample.kensyuu.service.*;
 
 /**
  * 
- * soer service imple
+ * sort service imple
  * 
- * @author t-coga
+ * @author k-t
  */
 public class SortServiceImpl implements SortService {
 
@@ -19,9 +19,21 @@ public class SortServiceImpl implements SortService {
      * @param number
      * @return
      */
-    public int[] doSort(int[] numbers) {
+    public int[] doSort(int[] values) {
 
-        // 処理書く
-        return numbers;
+         int[] vals = values;
+            if ( vals == null || vals.length == 0 ) return vals;         
+            int temp=0;
+            for ( int i = 0; i < vals.length - 1; i++ ) {
+                for ( int j = vals.length - 1; j > i; j-- ) {
+                    if ( vals[j - 1] > vals[j] ) {
+                        temp = vals[j - 1];
+                        vals[j - 1] = vals[j];
+                        vals[j] = temp;
+                    }
+                }
+            }
+
+        return values;
     }
 }
