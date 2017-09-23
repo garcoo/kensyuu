@@ -3,13 +3,15 @@
  */
 package com.sample.kensyuu.service.impl;
 
+import org.hamcrest.core.Is;
+
 import com.sample.kensyuu.service.*;
 
 /**
  * 
- * soer service imple
+ * sort service imple
  * 
- * @author t-coga
+ * @author s.h
  */
 public class SortServiceImpl implements SortService {
 
@@ -21,7 +23,25 @@ public class SortServiceImpl implements SortService {
      */
     public int[] doSort(int[] numbers) {
 
+        if(numbers == null) {
+            System.out.println("配列がnullです");
+            return numbers;
+        }
+        
+        int int_one  = 1;
+        int n = numbers.length;
+                
         // 処理書く
-        return numbers;
+        for(int b = n-1; b >= int_one; b--) {
+            for(int a = n-1; a >= int_one; a--) {
+                if(numbers[a] < numbers[a-1]) {
+                    int temp;
+                    temp = numbers[a];
+                    numbers[a] = numbers[a-1];
+                    numbers[a-1] = temp;
+                }   
+            }
+        }
+    return numbers;
     }
 }
